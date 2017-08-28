@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/final_project">
+    <Resource name="jdbc/bookshowcase"
+              auth="Container"
+              driverClassName="com.mysql.jdbc.Driver"
+              type="javax.sql.DataSource"
+              username="root"
+              password="metallica"
+              url="jdbc:mysql://localhost:3306/bookshowcase"/>
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           userTable="User"
+           userNameCol="username"
+           userCredCol="password"
+           userRoleTable="UserRoles"
+           roleNameCol="rolename"
+           localDataSource="true"
+           digest="SHA-512"
+           dataSourceName="jdbc/bookshowcase" />
+    <Context>
+        <Resource name="BeanManager"
+             auth="Container"
+             type="javax.enterprise.inject.spi.BeanManager"
+             factory="org.jboss.weld.resources.ManagerObjectFactory" />
+    </Context>
+</Context>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+    <rule>
+        <name>Register user</name>
+        <from>/(user)/(register)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>Login</name>
+        <from>/(user)/(login)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>Login Error</name>
+        <from>/(user)/(loginError)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>Login Error</name>
+        <from>/(user)/(getUsers)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>Create book</name>
+        <from>/(book)/(create)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>List books</name>
+        <from>/(book)/(list)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>View book</name>
+        <from>/(book)/(view)/(id)/([0-9]+)</from>
+        <to>/?controller=$1&amp;method=$2&amp;id=$4</to>
+    </rule>
+    <rule>
+        <name>View category</name>
+        <from>/(category)/(view)/(id)/([0-9]+)</from>
+        <to>/?controller=$1&amp;method=$2&amp;id=$4</to>
+    </rule>
+    <rule>
+        <name>Convert file</name>
+        <from>/(converter)/(convert)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>Show Db info</name>
+        <from>/(dbcontroller)/(showdbinfo)</from>
+        <to>/?controller=$1&amp;method=$2</to>
+    </rule>
+    <rule>
+        <name>Convert file</name>
+        <from>/(dbcontroller)/(showtableinfo)/dbname/(([A-Za-z0-9]+))</from>
+        <to>/?controller=$1&amp;method=$2&amp;dbname=$4</to>
+    </rule>
+</urlrewrite>

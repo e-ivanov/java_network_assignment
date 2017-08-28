@@ -1,0 +1,55 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </button> <a class="navbar-brand" href="<%= request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()%>">Home</a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="<%= request.getContextPath()%>/book/create">Качи книга</a>
+                                </li>
+                                <li class="active">
+                                    <a href="<%= request.getContextPath()%>/book/list">Всички книги</a>
+                                </li>
+                                <li class="active">
+                                    <a href="<%= request.getContextPath()%>/converter/convert">Конвертирай документ</a>
+                                </li>
+                                <li class="active">
+                                    <a href="<%= request.getContextPath()%>/dbcontroller/showdbinfo">Метаданни MySQL</a>
+                                </li>
+
+                                <li class="active">
+                                    <a href="<%= request.getContextPath()%>/user/register">Регистрация</a>
+                                </li>
+
+                            </ul>
+    
+                            <ul class="nav navbar-nav navbar-right">
+                                <c:if test="${not empty pageContext.request.userPrincipal}">
+                                    <li>
+                                        <a href="<%= request.getContextPath()%>/logout">Изход</a>
+                                    </li>
+                                </c:if>
+                            </ul>
+                        </div>
+
+                    </nav>
+                                <div class="jumbotron">
+                        <h2>
+                            Курсов проект към курса "Мрежово програмиране с Java" (2016).
+                        </h2>
+                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4"><h2>${message}</h2></div>
+                                        <div class="col-md-4"></div>
+                                    </div>
+                </div>
+            </div>
